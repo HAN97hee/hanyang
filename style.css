@@ -1,0 +1,701 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+.nanumgothiccoding * {
+ font-family: 'NGC', monospace;
+}
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'NSKR', sans-serif;
+}
+
+
+/* 공통요소 css */
+*{ margin:0; padding:0; }
+
+li{ list-style:none; }
+a{ text-decoration: none; color:inherit; }
+img{ vertical-align: top; }
+html{ overflow-x: hidden; }
+html.fix{overflow: hidden;}
+body{font-family: 'NSKR', sans-serif; font-size:16px; color:#000; }
+.wrap{ width: 1500px; margin:0 auto; position: relative; }
+.wrap:after, ul:after, .cl:after{ content:""; clear: both; display: block; }
+.blind{ position: absolute; left: -9999px; width: 0; height: 0; font-size:0; overflow: hidden; }
+.bold{font-weight: bold;}
+/* .blank{height: 10px;} */
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+
+/* header & footer  */
+
+/* top hed css */
+
+/* 글로벌 네비바 css */
+#tophed .navbox{position: absolute; background: none; width: 100vw; height: 60px; top: 0; left: 70px; transition: 0.4s;}
+#tophed .navbox:hover{background-color: #5f0830;}
+#tophed .navbox > a{float: left; margin: 10px 70px 0 15px;}
+#tophed .navbox .gnb li{float: left; margin-right: 70px; font-size: 19px; font-weight: bold; color: #fff; margin-top: 20px; display: block;
+transition: 0.3s;}
+#tophed .navbox .gnb li:hover{transform: scale(1.1);}
+
+/* 글로벌 네비 전체 틀 및 첫번째 ul관련 css */
+#tophed .gnbbox{color: #fff; position: absolute; top: 60px; left: 70px; z-index: 10;}
+#tophed .gnbbox > ul{width: 98vw; display: none;}
+#tophed .gnbbox > ul.on{display: block;}
+#tophed .gnbbox > ul > li{position: relative; float: left; width: 14%; padding-left: 20px; color: #000;}
+#tophed .gnbbox > ul > li > a{line-height: 3; font-weight: bold; font-size: 18px;}
+#tophed .gnbbox > ul > li > a:hover{color: #5f0830;}
+#tophed .gnbbox > ul > li:nth-of-type(1){width: 10%; background-color: rgba(255, 255, 255, 0.9);}
+#tophed .gnbbox > ul > li:nth-of-type(7){width: 10%; background-color: rgba(255, 255, 255, 0.9);}
+#tophed .gnbbox > ul > li:nth-child(1n){background-color: rgba(230, 230, 230, 1); height: 250px;}
+#tophed .gnbbox > ul > li:nth-child(2n){background-color: rgba(255, 255, 255, 1); height: 250px;}
+#tophed .gnbbox li ul li a{font-size: 16px; color: #111; font-weight: 300; line-height: 1.3;}
+#tophed .gnbbox li ul li a:hover{color: #5f0830;}
+
+/* gnb ul들의 각 높이값설정 */
+#tophed .gnbbox > ul:nth-child(1) > li{height: 250px;}
+#tophed .gnbbox > ul:nth-child(2) > li{height: 300px;}
+#tophed .gnbbox > ul:nth-child(3) > li{height: 100px; width: 18.1%;}
+#tophed .gnbbox > ul:nth-child(4) > li{width: 15.2%;}
+#tophed .gnbbox > ul:nth-child(5) > li{height: 120px; width: 13%;}
+
+/* left hed css */
+#hed{width: 70px; height: 100vh; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.3); z-index: 10; z-index: 10;}
+
+/* 동적햄버거매뉴 아이콘 */
+#menuicon{display: none;}
+#menuicon + label{display: block; width: 50px; height: 30px; position: relative; cursor: pointer; margin: 15px 0 0 13px;}
+#menuicon + label span{display: block; position: absolute; width: 80%; height: 3px; border-radius: 30px; background: #fff;
+transition: all .35s;}
+
+#menuicon + label span:nth-child(1){top: 0;}
+#menuicon + label span:nth-child(2){top: 50%; transform: translateY(-50%);}
+#menuicon + label span:nth-child(3){bottom: 0;}
+
+#menuicon:checked + label span:nth-child(1){top: 50%; transform: translateY(-50%) rotate(45deg);}
+#menuicon:checked + label span:nth-child(2){opacity: 0;}
+#menuicon:checked + label span:nth-child(3){bottom: 50%; transform: translateY(50%) rotate(-45deg);}
+
+/* 언어 박스 */
+#hed .language{width: 45px; height: 20px; background: none; border: 1px solid #fff; color: #fff; position: relative; 
+margin-top: 100px; margin-left: 11px; text-align: center; font-weight: bold; cursor: pointer; transition: 0.5s;}
+#hed .language .lanbox{position: absolute; width: 45px; height: 50px; background: rgba(0, 0, 0, 0.3); top: 21px; display: none;}
+#hed .language .lanbox a:first-child{line-height: 1.7;}
+#hed .language:hover{border: 1px solid orange;}
+#hed .language:hover p{color: orange;}
+#hed .language:hover p i{color: orange;}
+
+/* 로그인 */
+#hed .login{color: #fff; font-weight: bold; font-size: 14px; text-align: center; margin-top: 30px;}
+#hed .login i{font-size: 35px;}
+
+/* 검색 */
+#hed .search{color: #fff; font-weight: bold; font-size: 14px; text-align: center; margin-top: 30px;}
+#hed .search i{font-size: 30px;}
+
+
+/* sns링크박스 css */
+#hed .snsbox{position: absolute; bottom: 0;}
+#hed .snsbox img{width: 30px; margin: 0 0 15px 18px;}
+
+
+
+
+
+/* footer css */
+#fot{width: 100%; height: 400px; background-color: #262626; color: #b2b1b1;}
+#fot .ft1 ul{float: left; margin-top: 70px;  margin-right: 45px; padding: 0 10px 5px 10px; font-weight: 600;}
+#fot .ft1 ul li{line-height: 2;}
+#fot .ft1 ul:nth-child(2) li:nth-of-type(1){color: #c50;}
+#fot .ft1 ul:nth-child(3){border-left: 1px solid #b2b1b1; padding-left: 50px;}
+#fot .ft1 ul:nth-child(3) li > a{font-weight: bold; font-size: 25px; color: #fff;}
+#fot .ft1 ul:nth-child(3) li:nth-of-type(2){font-size: 13px;}
+#fot .ft1 ul:nth-child(4) li > a{font-weight: bold; font-size: 25px; color: #fff;}
+
+#fot .ft1 .callbox > div{float: left; margin: 35px 0 0 20px;}
+#fot .ft1 .callbox{float: left; margin-top: 70px; float: right; background-color: #313131; width: 380px; height: 150px; padding: 0 10px 5px 10px;
+color: #b2b1b1;}
+#fot .ft1 .callbox h3{font-size: 16px; margin-bottom: 5px;}
+#fot .ft1 .callbox span{font-size: 25px; color: #fff; font-weight: bold;}
+#fot .ft1 .callbox p{font-size: 14px; margin-top: 5px;}
+
+#fot .ft1 .callbox > a{padding: 10px 10px; background-color: #5f0830; color: #fff; font-weight: bold; float: right; margin-top: 55px; margin-right: 30px;}
+/* 최하단 푸터 */
+#fot .ft2{margin-top: 50px;}
+#fot .ft2 > img{float: left; margin-right: 15px;}
+#fot .ft2 address {display: inline-block;}
+#fot .ft2 address span{font-style: normal; line-height: 1.5;}
+#fot .ft2 > div{float: right; position: relative;}
+#fot .ft2 > div > a{display: block; border: 1px solid #fff; background: none; color: #fff; padding: 0 10px; float: right; margin-left: 30px;
+width: 180px; line-height: 50px;}
+#fot .ft2 > div a i{float: right; margin-top: 15px; font-size: 18px;}
+#fot .ft2 > div img{margin: 0 15px;}
+
+#fot .ft2 > div ul{position: absolute; top: -240px; right: 0px; background-color: #262626; border: 1px solid #fff; color: #fff; display: none;
+width: 200px;}
+#fot .ft2 > div ul li{padding: 0 9px; line-height: 40px;}
+
+
+
+
+/* 전체네비게이션 창 css */
+#allnav{background: url(img/학과\ 소개\ 배경이미지.svg) no-repeat center/cover; background-color: #5f0830;
+width: 100%; height: 100%; position: fixed; top: 0; left: 0; display: none; z-index: 8; padding-top: 150px; overflow: auto;}
+#allnav .wrap .mi > a{font-size: 23px; color: #fff; border-bottom: 1px solid #888; display: block; width: 100%; padding-bottom: 20px; margin-bottom: 20px;
+font-weight: bold;}
+#allnav .wrap .mi > a img{margin-right: 10px;}
+#allnav .wrap div > ul{margin-bottom: 50px;}
+#allnav .wrap div > ul > li{float: left; color: #fff; margin-right: 170px; line-height: 2; margin-bottom: 50px;}
+#allnav .wrap div ul li a{font-size: 15px;}
+#allnav .wrap div > ul > li > a{font-weight: bold; margin-bottom: 5px; display: block; font-size: 18px;}
+#allnav .wrap div > ul > li:last-child{margin-right: 0;}
+#allnav .wrap div ul li a:hover{font-weight: bold;}
+
+
+/* 학사안내 2번째 ul 마진 */
+#allnav .wrap .mi2 > ul > li{margin-right: 260px;}
+#allnav .wrap .mi3 > ul > li{margin-right: 220px; margin-bottom: 50px;}
+#allnav .wrap .mi3 > ul > li:nth-of-type(5){margin-right: 0;}
+#allnav .wrap .mi4 > ul > li{margin-right: 250px;}
+#allnav .wrap .mi5 > ul > li{margin-right: 240px;}
+#allnav .wrap .mi5 > ul > li:nth-of-type(5){margin-right: 0;}
+#allnav .wrap .mi6 > ul > li{margin-right: 225px;}
+#allnav .wrap .mi7 > ul > li{margin-right: 180px; margin-bottom: 350px;}
+
+
+
+
+/* 메인 홈페이지 css --------------------------------------------------------------------------------------------------------- */
+/* section 1 main  */
+#main1{background: url(img/메인-배경.jpg) no-repeat center/cover; width: 100%; height: 100vh; padding: 100px 0 0 0;} 
+
+/* movecon 스크롤움직이는 아이콘 css */
+#main1 .movecon{position: absolute; top: 500px; left: 80px; color: #fff; z-index: 5;}
+#main1 .movecon p{font-size: 15px; font-weight: bold; float: left;}
+#main1 .movecon .round{width: 35px; height: 17px; border-radius: 35px; background: none; border: 2px solid #fff; display: block;
+float: left; margin-left: 7px;}
+#main1 .movecon .round > .ro1{width: 7px; height: 7px; border-radius: 7px; background-color: #fff; display: block; margin-top: 5px;
+opacity: 1; position: relative; animation: 3s dot 2s infinite;}
+@keyframes dot {
+    0% { left:0;}
+    50% { left:27px;}
+    100% { opacity: 0;} }
+#main1 .movecon > i{font-size: 18px; font-weight: bold; margin-left: 5px;}
+
+/* 메인 정보영역 */
+#main1 .bone{width: 1920px; height: 740px; margin-top: 70px; overflow: hidden; padding-left: 250px; overflow-x: scroll hidden;}
+#main1 .bone .wheel{width: 3100px; height: 740px; background: none; position: relative;}
+
+/* 텍스트 업다운 슬라이드 박스 css */
+#main1 .bone .wheel .textup{width: 490px; height: 130px; background: rgba(94, 16, 52, 0.8); text-align: center; position: relative; padding: 55px 0 55px 0;}
+#main1 .bone .wheel .textup .upslide{width: 490px; height: auto; position: relative; overflow: hidden;}
+#main1 .bone .wheel .textup .upslide li {font-size: 15px; font-weight: bold; color: #999; transform: scale(1); line-height: 2.5; transition: 0.5s;}
+#main1 .bone .wheel .textup .upslide li.select{transform: scale(1.3); color: #fff;}
+#main1 .bone .wheel .textup .upslides {width: 490px; height: 110px; overflow: hidden;}
+
+#main1 .bone .wheel .textup .upsbtn{position: absolute; bottom: 10px; right: 30px;}
+#main1 .bone .wheel .textup .upsbtn button{background: none; color: #fff; border: none; cursor: pointer;}
+#main1 .bone .wheel .textup .upsbtn button i{font-size: 20px;}
+#main1 .bone .wheel .textup .upsbtn button:nth-child(4){display: none;}
+
+/* 공지사항 css */
+#main1 .bone .wheel .mnot{position: relative; background: rgba(222, 222, 222, 0.8); width: 490px; height: 240px; margin-top: 10px; box-sizing: border-box; padding: 20px 20px;}
+#main1 .bone .wheel .mnot .notcat li:nth-of-type(1){float: left; margin-right: 180px; font-size: 25px; font-weight: bold; color: #000; pointer-events: none;}
+#main1 .bone .wheel .mnot .notcat li{float: left; margin-left: 30px; margin-bottom: 15px; font-size: 18px; color: #666;}
+#main1 .bone .wheel .mnot .notcat li.select{color: #000;}
+
+#main1 .bone .wheel .mnot .nottext.on{display: block; font-size: 16px; color: #333; line-height: 1.5; padding-top: 15px;}
+#main1 .bone .wheel .mnot .nottext{display: none;}
+
+#main1 .bone .wheel .mnot .plus a{background: none; width: 40px; height: 40px; position: absolute; bottom: 15px; right: 15px; display: block;}
+#main1 .bone .wheel .mnot .plus a span{position: absolute; top: calc(50% - 5px); left: 5px; width: 30px; height: 3px; background-color: #000; border-radius: 40px;
+transition: 1s;} 
+#main1 .bone .wheel .mnot .plus a span:nth-of-type(2){transform: translateY(50%) rotate(-90deg);}
+#main1 .bone .wheel .mnot .plus a:hover span{transform: rotate(1080deg);}
+#main1 .bone .wheel .mnot .plus a:hover span:nth-of-type(2){transform: translateY(50%) rotate(-810deg);}
+
+/* 증명서발급 css */
+#main1 .bone .wheel .iss{width: 240px; height: 240px; background: rgba(113, 32, 136, 0.8); position: absolute; top: 0; left: 750px; color: #fff; box-sizing: border-box; 
+padding: 30px 30px; font-size: 18px; line-height: 1.5;}
+#main1 .bone .wheel .iss p{color: #eee; font-size: 16px; margin: 10px 0;}
+#main1 .bone .wheel .iss img{position: absolute; bottom: 10px; right: 10px; filter: brightness(10);}
+
+/* 메인 학사안내css  */
+#main1 .bone .wheel .bac{width: 240px; height: 240px; background: rgba(174, 131, 63, 0.8); position: absolute; top: 250px; left: 500px; box-sizing: border-box;
+padding: 30px 30px;}
+#main1 .bone .wheel .bac p{font-size: 18px; color: #eee;}
+#main1 .bone .wheel .bac img{position: absolute; bottom: 15px; right: 15px; filter: brightness(10);}
+#main1 .bone .wheel .bac .bacnum {position: absolute; bottom: 30px; left: 20px;}
+#main1 .bone .wheel .bac .bacnum li{float: left; width: 10px; height: 10px; border-radius: 10px; background-color: #fff; margin-right: 5px; cursor: pointer;
+transition: 0.3s;}
+#main1 .bone .wheel .bac .bacnum li.select{width: 20px; height: 10px; border-radius: 15px;}
+
+#main1 .bone .wheel .bac .inslide1{width: 100%; height: 100%; background: none; overflow: hidden;}
+#main1 .bone .wheel .bac .inslide1 .ins1{width: 1200px; height: 100px; position: relative;}
+#main1 .bone .wheel .bac .inslide1 .ins1 li{float: left; width: 240px; height: 100px; color: #fff; font-size: 25px;}
+#main1 .bone .wheel .bac .inslide1 .ins1 li a{display: block; margin-top: 20px;}
+
+/* 한양사이버대 뉴스 css */
+#main1 .bone .wheel .hnews{width: 490px; height: 240px; position: absolute; bottom: 0; left: 250px; background: rgba(90, 32, 106, 0.8); overflow: hidden;}
+#main1 .bone .wheel .hnews .newsdot{position: absolute; bottom: 30px; left: 30px; z-index: 10;}
+#main1 .bone .wheel .hnews .newsdot li{float: left; width: 10px; height: 10px; border-radius: 10px; background-color: #fff; margin-right: 5px; cursor: pointer;
+transition: 0.3s;}
+#main1 .bone .wheel .hnews .newsdot li.select{width: 20px; border-radius: 20px;}
+
+#main1 .bone .wheel .hnews .news{width: 2450px; position: relative;}
+#main1 .bone .wheel .hnews .news li{float: left; width: 490px; height: 240px; position: relative;}
+#main1 .bone .wheel .hnews .news li h3{width: 50%; height: 240px; float: right; overflow: hidden; box-sizing: border-box;}
+#main1 .bone .wheel .hnews .news li img{width: 100%; height: 240px;}
+#main1 .bone .wheel .hnews .news span{display: inline-block; position: absolute; top: 30px; left: 30px; color: #eee;}
+#main1 .bone .wheel .hnews .news p{display: inline-block; position: absolute; top: 60px; left: 30px; color: #fff; font-weight: 600;
+font-size: 17px; margin-top: 10px;}
+
+/* 전공소개 css */
+#main1 .bone .wheel .itm{width: 490px; height: 490px; background: rgba(94, 16, 52, 0.8); position: absolute; top: 250px; left: 750px; overflow: hidden;}
+#main1 .bone .wheel .itm .itmbox{width: 2940px; height: 490px; position: relative;}
+#main1 .bone .wheel .itm .itms{width: 490px; height: 100%; float: left;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1){width: 50%; height: 100%; float: left; padding: 30px 30px; box-sizing: border-box; color: #fff;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(2){width: 50%; height: 100%; float: right;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(2) img{width: 100%; height: 100%; object-fit: cover;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) h3{line-height: 1.8;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) span{color: #999;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) p{font-size: 18px; font-weight: bold; margin-top: 10px;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) > div{margin-top: 280px;}
+
+#main1 .bone .wheel .itm .itmbtn{position: absolute; bottom: 100px; left: 30px;}
+#main1 .bone .wheel .itm .itmbtn button{width: 50px; line-height: 50px; background: none; border: none; cursor: pointer; z-index: 2;}
+#main1 .bone .wheel .itm .itmbtn button i{font-size: 35px; color: #fff;}
+
+
+/* 큐브슬라이드 css 스와이프따온것*/
+.swiper {width: 490px; height: 240px; position: absolute; left: 1000px; top: 0;}
+.swiper-slide { background-position: center; background-size: cover; width: 490px; height: 240px; }
+.swiper-slide img { display: block; width: 100%; height: 100%;}
+.swiper-button-next{position: absolute; top: 25px; left: 450px; color: #fff; --swiper-navigation-size: 25px;}
+.swiper-button-prev{position: absolute; top: 25px; left: 400px; color: #fff; --swiper-navigation-size: 25px;}
+
+/* 주요행사 css  */
+#main1 .bone .wheel .ic {width: 240px; height: 240px; background: rgba(174, 131, 63, 0.8); position: absolute; top: 0; left: 1500px;
+font-size: 18px; line-height: 1.5; padding: 30px 30px; box-sizing: border-box; color: #fff;}
+#main1 .bone .wheel .ic a p{font-size: 16px; color: #eee; margin: 10px 0;}
+#main1 .bone .wheel .ic a img{position: absolute; bottom: 10px; right: 10px; filter: brightness(10);}
+
+/* 수상이력 css */
+#main1 .bone .wheel .tro{width: 240px; height: 240px; background: rgba(255, 255, 255, 0.7); position: absolute; text-align: center; 
+top: 250px; left: 1750px; color: #000; box-sizing: border-box; font-size: 18px; font-weight: bold;}
+#main1 .bone .wheel .tro a{display: block; width: 100%; height: 100%;}
+#main1 .bone .wheel .tro a img{filter: brightness(-10); margin-top: 50px;}
+    
+/* 이달의 학사일정 css */
+#main1 .bone .wheel .asu{width: 490px; height: 240px; background: #fff; box-sizing: border-box; padding: 30px 30px; position: absolute;
+top: 250px; left: 1250px;}
+#main1 .bone .wheel .asu h3{display: block; margin-bottom: 30px;}
+#main1 .bone .wheel .asu p a{font-size: 15px; font-weight: bold; line-height: 1.5;}
+#main1 .bone .wheel .asu p a span{font-weight: 300; font-size: 14px;}
+#main1 .bone .wheel .asu .asuplus{width: 50px; height: 50px; position: absolute; top: 180px; left: 430px; display: block; z-index: 2; text-align: center; 
+box-sizing: border-box; padding-right: 20px;}
+#main1 .bone .wheel .asu .asuplus span{width: 25px; height: 3px; border-radius: 50px; background-color: #000; transition: 0.5s;}
+#main1 .bone .wheel .asu .asuplus a{display: block;}
+#main1 .bone .wheel .asu .asuplus span:nth-of-type(1){position: absolute; top: calc(50% - 1px);}
+#main1 .bone .wheel .asu .asuplus span:nth-of-type(2){position: absolute; top: calc(50% - 2px); transform: translateY(50%) rotate(90deg);}
+
+#main1 .bone .wheel .asu .asuplus:hover a span:nth-child(1) {transform: rotate(-270deg);}
+#main1 .bone .wheel .asu .asuplus:hover a span:nth-child(2) {transform: rotate(-540deg);}
+
+/* 우수논문 css */
+#main1 .bone .wheel .ts{width: 490px; height: 240px; position: absolute; top: 0; left: 1750px; background: rgba(94, 16, 52, 0.8); overflow: hidden;}
+#main1 .bone .wheel .ts .tss{width: 2450px; position: relative;}
+#main1 .bone .wheel .ts .tss li{float: left; color: #999; width: 490px; height: 240px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1){width: 60%; float: left;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1) p{margin: 20px 0 10px 20px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1) h3{color: #fff; font-size: 20px; display: block; margin: 0 0 30px 20px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1) span{ font-size: 14px; margin: 0 0 0 20px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(2){width: 40%; float: right;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(2) img{width: 55%; height: 100%; margin: 40px 0 0 35px;}
+
+#main1 .bone .wheel .ts .tsdot{position: absolute; top: 200px; left: 20px; width: 100px; height: 20px;}
+#main1 .bone .wheel .ts .tsdot li{float: left; margin-right: 8px;}
+#main1 .bone .wheel .ts .tsdot li a{width: 10px; height: 10px; border-radius: 10px; background-color: #fff; display: block;}
+#main1 .bone .wheel .ts .tsdot li.select a{width: 20px; border-radius: 20px;}
+
+#main1 .bone .wheel .ts .tsplus{position: absolute; bottom: 15px; right: 15px; text-align: center;}
+#main1 .bone .wheel .ts .tsplus a{display: block; width: 30px; height: 30px; z-index: 2;}
+#main1 .bone .wheel .ts .tsplus span{width: 25px; height: 3px; border-radius: 25px; background-color: #fff; display: block; transition: 0.5s;}
+#main1 .bone .wheel .ts .tsplus span:nth-of-type(1){position: absolute; top: 50%;}
+#main1 .bone .wheel .ts .tsplus span:nth-of-type(2){position: absolute; top: 50%; transform: rotate(90deg);}
+#main1 .bone .wheel .ts .tsplus a:hover span:nth-child(1){transform: rotate(-270deg);}
+#main1 .bone .wheel .ts .tsplus a:hover span:nth-child(2){transform: rotate(-540deg);}
+
+
+/* 동아리 css */
+#main1 .bone .wheel .club{width: 490px; height: 240px; position: absolute; top: 250px; left: 2000px; background: rgba(113, 52, 136, 0.8); overflow: hidden;}
+#main1 .bone .wheel .club .clubs{width: 2450px; position: relative;}
+#main1 .bone .wheel .club .clubs li{float: left; width: 490px; height: 240px;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(1){width: 50%; float: left;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(1) p{color: #eee; margin: 20px 0 20px 20px;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(1) h3{color: #fff; font-size: 20px; margin-left: 20px; display: block;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(2){width: 50%; float: right;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(2) img{width: 100%; height: 100%;}
+
+#main1 .bone .wheel .club .clubdot{position: absolute; top: 200px; left: 20px; width: 100px; height: 20px; text-align: center; z-index: 2;}
+#main1 .bone .wheel .club .clubdot li{float: left; margin-left: 8px;}
+#main1 .bone .wheel .club .clubdot li a{width: 10px; height: 10px; border-radius: 10px; background-color: #fff; display: block;}
+#main1 .bone .wheel .club .clubdot li.select a{width: 20px; border-radius: 20px;}
+
+
+/* 개교20주년 css */
+#main1 .bone .wheel .os{width: 240px; height: 240px; position: absolute; bottom: 0; left: 1500px; background: rgba(94, 16, 52, 0.8); text-align: center; color: #fff;}
+#main1 .bone .wheel .os a{display: block; width: 240px; height: 240px;}
+#main1 .bone .wheel .os a img{margin-top: 50px;}
+
+/* vr 캠퍼스 css */
+#main1 .bone .wheel .vr{width: 240px; height: 240px; position: absolute; bottom: 0; left: 1750px; background: rgba(80, 22, 106, 0.8); text-align: center; color: #fff;}
+#main1 .bone .wheel .vr a{display: block; width: 240px; height: 240px;}
+#main1 .bone .wheel .vr a img{margin-top: 50px; filter: brightness(10);}
+
+
+/* 한양사이버대학원 유튭 css */
+#main1 .bone .wheel .hyt{width: 240px; height: 240px; position: absolute; top: 0; left: 2250px; background: rgba(80, 22, 106, 0.8); text-align: center;}
+#main1 .bone .wheel .hyt a{width: 240px; height: 240px; display: block;}
+#main1 .bone .wheel .hyt a img{width: 80%; margin-top: 100px;}
+
+
+/* 학생복지안내 css */
+#main1 .bone .wheel .sw{width: 240px; height: 240px; position: absolute; bottom: 0; left: 2000px; background: rgba(174, 131, 63, 0.8); color: #fff;}
+#main1 .bone .wheel .sw a {width: 240px; height: 240px; display: block; box-sizing: border-box; padding: 20px 20px;}
+#main1 .bone .wheel .sw a img{position: absolute; bottom: 0; right: 0; filter: brightness(10);}
+#main1 .bone .wheel .sw a h3{font-size: 18px; margin: 30px 0 0 0;}
+
+
+/* 학교자랑 css */
+#main1 .bone .wheel .sc{width: 490px; height: 240px; position: absolute; bottom: 0; left: 2250px; background: rgba(94, 16, 52, 0.8); color: #fff; overflow: hidden;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(1){width: 40%; height: 120px; float: left; padding-left: 50px; box-sizing: border-box;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(1) img{width: 80%; margin-top: 30px;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(2){width: 60%; height: 120px; float: right; box-sizing: border-box; padding-left: 15px;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(2) h4 span{font-size: 50px;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(2) h4{line-height: 1.5;}
+#main1 .bone .wheel .sc .scs{width: 2450px; position: relative;}
+#main1 .bone .wheel .sc .scs li{float: left; width: 490px; height: 240px;}
+#main1 .bone .wheel .sc h3{margin: 30px 0 10px 20px;}
+
+#main1 .bone .wheel .sc .scdot{width: 100px; height: 10px; position: absolute; bottom: 20px; left: calc(50% - 50px);}
+#main1 .bone .wheel .sc .scdot li a{width: 10px; height: 10px; border-radius: 10px; background-color: #fff; display: block;}
+#main1 .bone .wheel .sc .scdot li{float: left; margin: 0 3px;}
+#main1 .bone .wheel .sc .scdot li.select a{width: 20px; border-radius: 20px;}
+
+#main1 .bone .wheel .sc .scplus{position: absolute; bottom: 10px; right: 10px; text-align: center; z-index: 2;}
+#main1 .bone .wheel .sc .scplus a span{width: 25px; height: 3px; border-radius: 30px; background-color: #fff; display: block; transition: 0.5s;}
+#main1 .bone .wheel .sc .scplus a span:nth-of-type(1){position: absolute; top: calc(50% - 1px); transform: rotate(90deg);}
+#main1 .bone .wheel .sc .scplus a span:nth-of-type(2){position: absolute; top: calc(50% - 1px);}
+#main1 .bone .wheel .sc .scplus a{width: 30px; height: 30px; display: block; z-index: 3;}
+#main1 .bone .wheel .sc .scplus a:hover span:nth-child(1){transform: rotate(-270deg);}
+#main1 .bone .wheel .sc .scplus a:hover span:nth-child(2){transform: rotate(-540deg);}
+
+
+/* 투명창 전체 css  */
+#main1 .bone .wheel .b1 img{position: absolute; bottom: 0; background: none;}
+#main1 .bone .wheel .b2 img{position: absolute; top: 0; left: 500px; background: none;}
+#main1 .bone .wheel .b3{position: absolute; bottom: 0; left: 1250px;}
+#main1 .bone .wheel .b4{position: absolute; top: 250px; left: 2500px;}
+
+
+
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+
+
+
+
+
+/* 모바일 css ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+@media (max-width:800px) { /* 모바일용 */
+.pc { display: none !important; }
+.wrap { width: 98%; }
+     
+
+/* left hed css */
+#hed{width: 50px; height: 50px; position: fixed; left: 0; top: 0; background: none; z-index: 12; transition: 0.5s;}
+#hed.on{background: rgba(0, 0, 0, 0.5);}
+
+#allnav{background: url(img/학과\ 소개\ 배경이미지.svg) no-repeat center/cover; background-color: #5f0830;
+width: 100%; height: 100%; position: fixed; top: 0; left: 0; display: none; z-index: 8; padding-top: 80px; overflow: auto; 
+background-position: right bottom 40px; background-size: 130%; box-sizing: border-box;}
+
+
+/* footer css */
+#fot{width: 100vw; height: auto; background-color: #262626; color: #b2b1b1; margin: 0 auto; position: relative; padding-bottom: 20px;}
+#fot .ft1 ul{float: left; margin-top: 30px;  margin-right: 8px; padding: 0 10px 5px 10px; font-weight: 600; font-size: 14px;}
+#fot .ft1 ul:nth-child(2) li:nth-of-type(1){color: #c50;}
+#fot .ft1 ul:nth-child(2){margin-right: 0;}
+#fot .ft1 ul:nth-child(3){border-left: none; padding-left: 10px;}
+#fot .ft1 ul:nth-child(3) li > a{font-weight: bold; font-size: 20px; color: #fff;}
+#fot .ft1 ul:nth-child(3) li:nth-of-type(2){font-size: 12px;}
+#fot .ft1 ul:nth-child(4) li > a{font-weight: bold; font-size: 20px; color: #fff;}
+#fot .ft1 ul:nth-child(4){margin-right: 0;}
+
+/* 최하단 푸터 */
+#fot .ft2{margin-top: 10px;}
+#fot .ft2 > img{float: none; margin-right: none; width: 100px; position: relative; left: calc(50% - 50px);}
+#fot .ft2 address {display: inline-block; text-align: center; position: relative; left: calc(50% - 160px);}
+#fot .ft2 address span{font-style: normal; line-height: 1.5; font-size: 10px;}
+#fot .ft2 > div{float: right; position: relative;}
+#fot .ft2 > div > a{display: block; border: 1px solid #fff; background: none; color: #fff; padding: 0 10px; float: right; margin-left: 10px;
+width: 180px; line-height: 40px; margin-top: 30px;}
+#fot .ft2 > div a i{float: right; margin-top: 10px; font-size: 18px;}
+#fot .ft2 > div img{margin: 0 5px; width: 50px; margin-top: 30px;}
+
+#fot .ft2 > div ul{position: absolute; top: -211px; right: 0px; background-color: #262626; border: 1px solid #fff; color: #fff; display: none;}
+#fot .ft2 > div ul li{padding: 0 9px; line-height: 40px;}
+
+
+
+/* 모바일 메인로고 */
+#tophed .navbox > a{float: none; position: fixed; top: 10px; z-index: 7; margin: 0; left: calc(50% - 90px);}
+#tophed .navbox > a img{width: 180px;}
+/* 동적햄버거매뉴 아이콘 */
+#menuicon{display: none;}
+#menuicon + label{display: block; width: 30px; height: 20px; position: relative; cursor: pointer; margin: 15px 0 0 13px;}
+
+#allnav .mob .topmob{width: 100%; height: 50px; background-color: #333; position: fixed; top: 0;}
+/* 언어박스 */
+#allnav .language{width: 45px; height: 20px; background: none; border: 1px solid #fff; color: #fff; position: relative; 
+margin-left: 0; top: 15px; left: 60px; text-align: center; font-weight: bold; cursor: pointer; transition: 0.5s; font-size: 13px;}
+#allnav .language .lanbox{position: absolute; width: 45px; height: 50px; background: rgba(0, 0, 0, 0.3); top: 21px; display: none;}
+#allnav .language .lanbox a:first-child{line-height: 1.7;}
+#allnav .mob .topmob > a{position: absolute; top: 5px; width: 40px; height: 40px; text-align: center; margin-top: 3px;}
+#allnav .mob .topmob > a p{font-size: 10px; color: #fff;}
+#allnav .mob .topmob > a img{width: 20px;}
+#allnav .mob .topmob > a:nth-of-type(1){right: 120px;}
+#allnav .mob .topmob > a:nth-of-type(2){right: 80px;}
+#allnav .mob .topmob > a:nth-of-type(3){right: 40px;}
+#allnav .mob .topmob > a:nth-of-type(4){right: 0;}
+
+#allnav .mob .fotmob{width: 100%; height: 50px; background-color: #333; position: fixed; bottom: 0;}
+#allnav .mob .fotmob .snsbox{display: flex; align-items: center; justify-content: center; text-align: center;}
+#allnav .mob .fotmob .snsbox a{margin: 0 10px; padding-top: 12px;}
+
+
+/* 모드네비 */
+#allnav .wrap .mi > a{font-size: 20px; color: #fff; border-bottom: 1px solid #888; display: block; width: 100%; padding-bottom: 20px; margin-bottom: 20px;
+    font-weight: bold;}
+#allnav .wrap .mi > a img{margin-right: 10px;}
+#allnav .wrap div > ul{margin-bottom: 20px;}
+#allnav .wrap div > ul > li{float: left; color: #fff; line-height: 2; margin-bottom: 50px; width: 50%;}
+#allnav .wrap div ul li a{font-size: 13px;}
+#allnav .wrap div > ul > li > a{font-weight: bold; margin-bottom: 5px; display: block; font-size: 15px;}
+#allnav .wrap div > ul > li:last-child{margin-right: 0;}
+#allnav .wrap div ul li a:hover{font-weight: bold;}
+    
+    
+/* 학사안내 2번째 ul 마진 */
+#allnav .wrap .mi1 > ul > li{margin-right: 0;}
+#allnav .wrap .mi2 > ul > li{margin-right: 0;}
+#allnav .wrap .mi3 > ul > li{margin-right: 0; margin-bottom: 0;}
+#allnav .wrap .mi3 > ul > li:nth-of-type(5){margin-right: 0;}
+#allnav .wrap .mi4 > ul > li{margin-right: 0;}
+#allnav .wrap .mi5 > ul > li{margin-right: 0;}
+#allnav .wrap .mi5 > ul > li:nth-of-type(5){margin-right: 0;}
+#allnav .wrap .mi6 > ul > li{margin-right: 0;}
+#allnav .wrap .mi7 > ul > li{margin-right: 0; margin-bottom: 0;}
+#allnav .wrap .mi7 > ul{margin-bottom: 100px;}
+    
+    
+
+
+/* main 메인 컨텐츠 영역 css--------------------------------------------------------------------------------------- */
+/* 메인 정보영역 */
+#main1 .bone{width: 95vw; height: 3050px; overflow: hidden; padding-left: 0; overflow-x: scroll hidden; margin: 0 auto;}
+#main1 .bone .wheel{width: 95vw; height: 3050px; background-color: none; background: none; position: relative;}
+#main1{background: url(img/메인-배경.jpg) no-repeat center/cover fixed; width: 100%; height: 3050px;} 
+
+/* 텍스트 업다운 슬라이드 박스 css */
+#main1 .bone .wheel .textup{width: 100%; height: 130px; background: rgba(94, 16, 52, 0.9); text-align: center; position: relative; padding-top: 60px;}
+#main1 .bone .wheel .textup .upslide{width: 100%; height: auto; position: relative; overflow: hidden;}
+#main1 .bone .wheel .textup .upslide li {font-size: 13px; font-weight: bold; color: #999; transform: scale(1); line-height: 2.5; transition: 0.5s;}
+#main1 .bone .wheel .textup .upslide li.select{transform: scale(1.2); color: #fff;}
+#main1 .bone .wheel .textup .upslides {width: 100%; height: 100px; overflow: hidden;}
+
+#main1 .bone .wheel .textup .upsbtn{position: absolute; bottom: 10px; right: 30px;}
+#main1 .bone .wheel .textup .upsbtn button{margin-left: 10px;}
+#main1 .bone .wheel .textup .upsbtn button i{font-size: 25px;}
+
+/* 공지사항 css */
+#main1 .bone .wheel .mnot{position: relative; background-color: #eee; width: 100%; height: 240px; margin-top: 10px; box-sizing: border-box; padding: 20px 20px;}
+#main1 .bone .wheel .mnot .notcat li:nth-of-type(1){float: left; margin-right: 100px; font-size: 22px; font-weight: bold; color: #000; pointer-events: none;}
+#main1 .bone .wheel .mnot .notcat li{float: left; margin-left: 15px; margin-bottom: 15px; font-size: 15px; color: #666;}
+#main1 .bone .wheel .mnot .notcat li.select{color: #000;}
+
+#main1 .bone .wheel .mnot .nottext.on{display: block; font-size: 13px; color: #333; line-height: 1.5; padding-top: 15px;}
+
+#main1 .bone .wheel .mnot .plus a span{position: absolute; top: calc(50% - 5px); left: 5px; width: 20px; height: 3px; background-color: #000; border-radius: 40px;
+transition: 1s;} 
+
+
+/* 메인 학사안내css  */
+#main1 .bone .wheel .bac{width: 48.5%; height: auto; background-color: #9a6f15; position: relative; top: -165px; left: auto; float: right; box-sizing: border-box;
+padding: 26px 30px;}
+#main1 .bone .wheel .bac p{font-size: 18px; color: #999;}
+#main1 .bone .wheel .bac img{position: absolute; bottom: 10px; right: 10px; filter: brightness(10); width: 40px;} 
+#main1 .bone .wheel .bac .bacnum {position: absolute; bottom: 30px; left: 20px;}
+#main1 .bone .wheel .bac .bacnum li{float: left; width: 10px; height: 10px; border-radius: 10px; background-color: #fff; margin-right: 5px; cursor: pointer;
+transition: 0.3s;}
+#main1 .bone .wheel .bac .bacnum li.select{width: 20px; height: 10px; border-radius: 15px;}
+        
+#main1 .bone .wheel .bac .inslide1{width: 100%; height: 100px; background: none; overflow: hidden;}
+#main1 .bone .wheel .bac .inslide1 .ins1{width: 1200px; height: 60px; position: relative;}
+#main1 .bone .wheel .bac .inslide1 .ins1 li{float: left; width: 240px; height: 60px; color: #fff; font-size: 25px;}
+#main1 .bone .wheel .bac .inslide1 .ins1 li a{display: block; margin-top: 20px;}
+        
+/* 증명서발급 css */
+#main1 .bone .wheel .iss{width: 48.5%; height: auto; background-color: #600f78; position: relative; top: 10px; left: 0; color: #fff; box-sizing: border-box; 
+padding: 27px 30px; font-size: 16px; line-height: 1.5;} 
+#main1 .bone .wheel .iss p{color: #999; font-size: 18px; margin: 0 0 10px 0;}
+#main1 .bone .wheel .iss img{position: absolute; bottom: 8px; right: 8px; filter: brightness(10); width: 40px; display: block;}
+        
+/* 한양사이버대 뉴스 css */
+#main1 .bone .wheel .hnews{width: 100%; height: 200px; position: relative; bottom: auto; top: -155px; left: 0; background-color: #600f78; overflow: hidden;}
+#main1 .bone .wheel .hnews .newsdot{position: absolute; bottom: 30px; left: 30px; z-index: 5;}
+#main1 .bone .wheel .hnews .newsdot li{float: left; width: 10px; height: 10px; border-radius: 10px; background-color: #fff; margin-right: 5px; cursor: pointer;
+transition: 0.3s;}
+#main1 .bone .wheel .hnews .newsdot li.select{width: 20px; border-radius: 20px;}
+
+#main1 .bone .wheel .hnews .news{width: 2450px;}
+#main1 .bone .wheel .hnews .news li{float: left; width: 14%; height: 200px; position: relative;}
+#main1 .bone .wheel .hnews .news li h3{width: 50%; height: 200px; float: right; overflow: hidden; box-sizing: border-box;}
+#main1 .bone .wheel .hnews .news li img{width: 100%; height: 200px;}
+#main1 .bone .wheel .hnews .news span{display: inline-block; position: absolute; top: 30px; left: 20px; color: #999;}
+#main1 .bone .wheel .hnews .news p{display: inline-block; position: absolute; top: 60px; left: 20px; color: #fff; font-weight: 600;
+font-size: 12px; margin-top: 10px;}
+
+/* 전공소개 css */
+#main1 .bone .wheel .itm{width: 100%; height: 400px; background: rgba(94, 16, 52, 0.7); position: absolute; top: 900px; left: 0; overflow: hidden;}
+#main1 .bone .wheel .itm .itmbox{width: 600%; height: 400px; position: relative;}
+#main1 .bone .wheel .itm .itms{width: 16.6%; height: 100%; float: left;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1){width: 52%; height: 100%; float: left; padding: 20px 20px;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(2){width: 48%; height: 100%; float: right;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) h3{line-height: 1.8; font-size: 14px;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) p{font-size: 15px;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(1) > div{margin-top: 200px;}
+#main1 .bone .wheel .itm .itms a > div:nth-of-type(2) img{width: 100%; height: 100%; object-fit: cover;}
+
+#main1 .bone .wheel .itm .itmbtn{position: absolute; bottom: 120px; left: 10px;}
+#main1 .bone .wheel .itm .itmbtn button i{font-size: 30px;}
+
+
+/* 큐브슬라이드 css 스와이프따온것*/
+.swiper {width: 100%; height: 200px; position: absolute; left: 0; top: 1310px;}
+.swiper-slide { background-position: center; background-size: cover; width: 100%; height: 100%; }
+.swiper-slide img { display: block; width: 100%; height: 100%;}
+.swiper-button-next{position: absolute; top: 25px; left: 320px; color: #fff; --swiper-navigation-size: 25px;}
+.swiper-button-prev{position: absolute; top: 25px; left: 280px; color: #fff; --swiper-navigation-size: 25px;}
+
+
+/* 주요행사 css  */
+#main1 .bone .wheel .ic {width: 48.5%; height: 170px; background: rgba(174, 131, 63, 0.7); position: absolute; top: 1520px; left: 0;
+font-size: 15px; line-height: 1.5; padding: 15px 15px; box-sizing: border-box; color: #fff;}
+#main1 .bone .wheel .ic a p{font-size: 14px; color: #999; margin: 10px 0;}
+#main1 .bone .wheel .ic a img{position: absolute; bottom: 10px; right: 10px; filter: brightness(10); width: 40px;}
+    
+/* 수상이력 css */
+#main1 .bone .wheel .tro{width: 48.5%; height: 170px; background: rgba(255, 255, 255, 0.7); position: absolute; text-align: center; 
+top: 1520px; left: auto; right: 0; color: #000; box-sizing: border-box; font-size: 15px; font-weight: 600;}
+#main1 .bone .wheel .tro a{display: block; width: 100%; height: 100%;}
+#main1 .bone .wheel .tro a img{filter: brightness(10); margin-top: 50px; width: 40px;}
+
+/* 이달의 학사일정 css */
+#main1 .bone .wheel .asu{width: 100%; height: 240px; background: #fff; box-sizing: border-box; padding: 15px 15px; position: absolute;
+top: 1700px; left: 0;}
+#main1 .bone .wheel .asu h3{display: block; margin-bottom: 25px;}
+#main1 .bone .wheel .asu p a{font-size: 14px; font-weight: bold; line-height: 1.5;}
+#main1 .bone .wheel .asu p a span{font-weight: 300; font-size: 12px;}
+#main1 .bone .wheel .asu .asuplus{width: 50px; height: 50px; position: absolute; top: 180px; left: auto; right: 10px; display: block; z-index: 2; text-align: center; 
+box-sizing: border-box; padding-right: 20px;}
+#main1 .bone .wheel .asu .asuplus span{width: 25px; height: 3px; border-radius: 50px; background-color: #000; transition: 0.5s;}
+#main1 .bone .wheel .asu .asuplus a{display: block;}
+#main1 .bone .wheel .asu .asuplus span:nth-of-type(1){position: absolute; top: calc(50% - 1px);}
+#main1 .bone .wheel .asu .asuplus span:nth-of-type(2){position: absolute; top: calc(50% - 2px); transform: translateY(50%) rotate(90deg);}
+    
+#main1 .bone .wheel .asu .asuplus:hover a span:nth-child(1) {transform: rotate(-270deg);}
+#main1 .bone .wheel .asu .asuplus:hover a span:nth-child(2) {transform: rotate(-540deg);}
+    
+
+/* 우수논문 css */
+#main1 .bone .wheel .ts{width: 100%; height: 240px; position: absolute; top: 1950px; left: 0; background: rgba(94, 16, 52, 0.7); overflow: hidden;}
+#main1 .bone .wheel .ts .tss{width: 500%; position: relative;}
+#main1 .bone .wheel .ts .tss li{float: left; color: #eee; width: 20%; height: 240px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1){width: 60%; float: left;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1) p{margin: 20px 0 15px 20px; font-size: 12px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1) h3{color: #fff; font-size: 14px; display: block; margin: 0 0 50px 20px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(1) span{ font-size: 12px; margin: 0 0 0 20px;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(2){width: 40%; float: right;}
+#main1 .bone .wheel .ts .tss li a > div:nth-of-type(2) img{width: 65%; height: 100%; margin: 40px 0 0 30px;}
+
+
+
+/* 동아리 css */
+#main1 .bone .wheel .club{width: 100%; height: 240px; position: absolute; top: 2200px; left: 0; background: rgba(113, 32, 136, 0.7); overflow: hidden;}
+#main1 .bone .wheel .club .clubs{width: 500%; position: relative;}
+#main1 .bone .wheel .club .clubs li{float: left; width: 20%; height: 240px; overflow: hidden;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(1) p{color: #eee; margin: 30px 0 30px 20px; font-size: 14px;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(1) h3{color: #fff; font-size: 18px; margin-left: 20px; display: block;}
+#main1 .bone .wheel .club .clubs li a > div:nth-of-type(2) img{width: auto; height: auto; object-fit: cover;}
+
+
+
+/* 개교20주년 css */
+#main1 .bone .wheel .os{width: 48.5%; height: 170px; position: absolute; bottom: auto; top: 2450px; left: 0; background: rgba(94, 16, 52, 0.8); text-align: center; color: #fff;}
+#main1 .bone .wheel .os a{display: block; width: 100%; height: 170px; font-size: 14px;}
+#main1 .bone .wheel .os a img{margin-top: 35px; width: 50px;}
+
+/* vr 캠퍼스 css */
+#main1 .bone .wheel .vr{width: 48.5%; height: 170px; position: absolute; bottom: auto; top: 2450px; left: auto; right: 0; background: rgba(80, 22, 106, 0.8); text-align: center; color: #fff;}
+#main1 .bone .wheel .vr a{display: block; width: 100%; height: 170px; font-size: 14px;}
+#main1 .bone .wheel .vr a img{margin-top: 35px; filter: brightness(10); width: 50px;}
+
+
+/* 한양사이버대학원 유튭 css */
+#main1 .bone .wheel .hyt{width: 48.5%; height: 170px; position: absolute; top: 2630px; left: auto; background: rgba(80, 22, 106, 0.8); text-align: center;}
+#main1 .bone .wheel .hyt a{width: 100%; height: 170px; display: block;}
+#main1 .bone .wheel .hyt a img{width: 80%; margin-top: 75px;}
+
+
+/* 학생복지안내 css */
+#main1 .bone .wheel .sw{width: 48.5%; height: 170px; position: absolute; bottom: auto; top: 2630px; left: auto; right: 0; background: rgba(174, 131, 63, 0.8); color: #fff;}
+#main1 .bone .wheel .sw a {width: 100%; height: 170px; display: block; box-sizing: border-box; padding: 20px 10px; font-size: 11px;}
+#main1 .bone .wheel .sw a h3{font-size: 13px; margin: 20px 0 0 0;}
+
+
+/* 학교자랑 css */
+#main1 .bone .wheel .sc{width: 100%; height: 200px; position: absolute; bottom: auto; top: 2810px; left: 0; background: rgba(94, 16, 52, 0.8); color: #fff; overflow: hidden;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(1){width: 30%; height: 120px; float: left; padding-left: 20px; box-sizing: border-box;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(1) img{width: 80%; margin-top: 30px;}
+#main1 .bone .wheel .sc .scs li a > div:nth-child(2){margin-top: 30px;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(2){width: 70%; height: 120px; float: left; box-sizing: border-box; padding-left: 0;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(2) h4 span{font-size: 30px;}
+#main1 .bone .wheel .sc .scs li a > div:nth-of-type(2) h4{line-height: 1.5;}
+#main1 .bone .wheel .sc .scs{width: 2450px; position: relative;}
+#main1 .bone .wheel .sc .scs li{float: left; width: 490px; height: 240px;}
+#main1 .bone .wheel .sc h3{margin: 10px 0 10px 10px; font-size: 14px;}
+
+
+
+
+
+}
+
+
+
+        
+       
+        
+@media (min-width:801px) { /* PC용 */
+.mob { display: none !important; }
+} 
