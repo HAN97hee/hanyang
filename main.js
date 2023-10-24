@@ -65,8 +65,65 @@ $(window).scroll(function(){
 
 
 //main script @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//챗 지피티 형님이 짜준 코드입니다.. 제 배 다른 형제입니다.. 고마어 형
+$(function() {
+    var isScrollingBone = false;
+
+    if (bw >= 800) {
+        // .bone 요소에서 좌우 스크롤 이벤트 처리
+        $(".bone").on("mousewheel", function(event, delta) {
+            // 현재 스크롤 위치
+            var currentScrollLeft = this.scrollLeft;
+
+            // 스크롤할 양
+            var scrollAmount = delta * 30;
+
+            // 새로운 스크롤 위치 계산
+            var newScrollLeft = currentScrollLeft - scrollAmount;
+
+            // .bone 요소의 양 끝에 도달하면 Body 스크롤 가능
+            if (newScrollLeft <= 0 || newScrollLeft >= this.scrollWidth - this.clientWidth) {
+                isScrollingBone = false;
+            }
+
+            // 스크롤 위치 설정
+            this.scrollLeft = newScrollLeft;
+
+            event.preventDefault();
+        });
+
+        // Body 요소에서 위아래 스크롤 이벤트 처리
+        $("body").on("mousewheel", function(event, delta) {
+            if (!isScrollingBone) {
+                // 현재 Body 스크롤 위치
+                var currentScrollTop = $(window).scrollTop();
+
+                // 스크롤할 양
+                var scrollAmount = delta * 30;
+
+                // 새로운 Body 스크롤 위치 계산
+                var newScrollTop = currentScrollTop - scrollAmount;
+
+                // Body 스크롤 위치 설정
+                $(window).scrollTop(newScrollTop);
+
+                event.preventDefault();
+            }
+        });
+
+        // .bone 스크롤 중인 경우 잠금 설정
+        $(".bone").on("scroll", function () {
+            isScrollingBone = true;
+        });
+    }
+});
+
+
+
+
 
 //좌우스크롤 메인섹션 영역
+/*
 $(function() {
     if(bw >= 800)
     $(".bone").mousewheel(function(event, delta) {
@@ -75,7 +132,7 @@ $(function() {
        event.preventDefault();
     });
  });
-
+*/
 
 //메인 텍스트 업다운 슬라이드 
 var ups = 0;
