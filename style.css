@@ -44,7 +44,7 @@ transition: 0.3s;}
 #tophed .gnbbox{color: #fff; position: absolute; top: 60px; left: 70px; z-index: 10;}
 #tophed .gnbbox > ul{width: 98vw; display: none;}
 #tophed .gnbbox > ul.on{display: block;}
-#tophed .gnbbox > ul > li{position: relative; float: left; width: 14%; padding-left: 20px; color: #000;}
+#tophed .gnbbox > ul > li{position: relative; float: left; width: 14.5%; padding-left: 20px; color: #000;}
 #tophed .gnbbox > ul > li > a{line-height: 3; font-weight: bold; font-size: 18px;}
 #tophed .gnbbox > ul > li > a:hover{color: #5f0830;}
 #tophed .gnbbox > ul > li:nth-of-type(1){width: 10%; background-color: rgba(255, 255, 255, 0.9);}
@@ -57,7 +57,7 @@ transition: 0.3s;}
 /* gnb ul들의 각 높이값설정 */
 #tophed .gnbbox > ul:nth-child(1) > li{height: 250px;}
 #tophed .gnbbox > ul:nth-child(2) > li{height: 300px;}
-#tophed .gnbbox > ul:nth-child(3) > li{height: 100px; width: 18.1%;}
+#tophed .gnbbox > ul:nth-child(3) > li{height: 100px; width: 18.5%;}
 #tophed .gnbbox > ul:nth-child(4) > li{width: 15.2%;}
 #tophed .gnbbox > ul:nth-child(5) > li{height: 120px; width: 13%;}
 
