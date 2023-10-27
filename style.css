@@ -578,7 +578,7 @@ font-size: 12px; margin-top: 10px;}
 /* 전공소개 css */
 #main1 .bone .wheel .itm{width: 100%; height: 400px; background: rgba(94, 16, 52, 0.7); position: absolute; top: 900px; left: 0; overflow: hidden;}
 #main1 .bone .wheel .itm .itmbox{width: 600%; height: 400px; position: relative;}
-#main1 .bone .wheel .itm .itms{width: 16.6%; height: 100%; float: left;}
+#main1 .bone .wheel .itm .itms{width: 16.7%; height: 100%; float: left;}
 #main1 .bone .wheel .itm .itms a > div:nth-of-type(1){width: 52%; height: 100%; float: left; padding: 20px 20px;}
 #main1 .bone .wheel .itm .itms a > div:nth-of-type(2){width: 48%; height: 100%; float: right;}
 #main1 .bone .wheel .itm .itms a > div:nth-of-type(1) h3{line-height: 1.8; font-size: 14px;}
