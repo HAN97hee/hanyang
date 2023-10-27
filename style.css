@@ -239,7 +239,7 @@ transition: 0.3s;}
 
 /* 한양사이버대 뉴스 css */
 #main1 .bone .wheel .hnews{width: 490px; height: 240px; position: absolute; bottom: 0; left: 250px; background: rgba(90, 32, 106, 0.8); overflow: hidden;}
-#main1 .bone .wheel .hnews .newsdot{position: absolute; bottom: 30px; left: 30px; z-index: 10;}
+#main1 .bone .wheel .hnews .newsdot{position: absolute; bottom: 30px; left: 30px; z-index: 3;}
 #main1 .bone .wheel .hnews .newsdot li{float: left; width: 10px; height: 10px; border-radius: 10px; background-color: #fff; margin-right: 5px; cursor: pointer;
 transition: 0.3s;}
 #main1 .bone .wheel .hnews .newsdot li.select{width: 20px; border-radius: 20px;}
