@@ -169,7 +169,7 @@ font-weight: bold;}
 
 /* 메인 홈페이지 css --------------------------------------------------------------------------------------------------------- */
 /* section 1 main  */
-#main1{background: url(img/메인-배경.jpg) no-repeat center/cover; width: 100%; height: 100vh; padding: 100px 0 0 0;} 
+#main1{background: url(img/메인-배경.jpg) no-repeat center/cover; width: 100%; height: 100%; padding: 50px 0 50px 0;} 
 
 /* movecon 스크롤움직이는 아이콘 css */
 #main1 .movecon{position: absolute; top: 500px; left: 80px; color: #fff; z-index: 5;}
